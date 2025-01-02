@@ -4,6 +4,8 @@ import { PortableText, PortableTextComponents } from "next-sanity";
 import Image from "next/image";
 import React from "react";
 
+export const revalidate = 10;
+
 async function getData(slug: string) {
   const query = `*[_type == 'blog' && slug.current == '${slug}']{
     "currentSlug": slug.current,

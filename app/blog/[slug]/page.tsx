@@ -1,5 +1,6 @@
 import { client, urlFor } from "@/app/lib/client";
 import { blogDetail } from "@/app/lib/interface";
+import CommentSection from "@/components/ui/CommentSection";
 import { PortableText, PortableTextComponents } from "next-sanity";
 import Image from "next/image";
 import React from "react";
@@ -58,6 +59,8 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
       <div className="mt-10 mb-10 mx-auto w-full max-w-full prose prose-blue prose-xl md:prose-headings:text-4xl dark:prose-invert prose-li:marker:text-primary">
         <PortableText value={data.content} components={components} />
       </div>
+
+      <CommentSection slug={params.slug} />
     </div>
   );
 };
